@@ -11,7 +11,7 @@ USER node:node
 
 COPY package.json ./
 RUN npm i
-ADD dist/ ./
+ADD dist/ ./dist
 
 EXPOSE 3000
 
