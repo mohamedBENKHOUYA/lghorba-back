@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SERVER_SSH_KEY" > ./deploy.key
-          sudo chmod 600 ./deploy.key
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        shell: bash
-        env:
-          PREPROD_SSH_KEY: ${{secrets.SERVER_SSH_KEY}}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+      # - name: Set up SSH
+      #   run: |
+      #     mkdir -p ~/.ssh/
+      #     echo "$SERVER_SSH_KEY" > ./deploy.key
+      #     sudo chmod 600 ./deploy.key
+      #     echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      #   shell: bash
+      #   env:
+      #     PREPROD_SSH_KEY: ${{secrets.SERVER_SSH_KEY}}
+      #     SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
 
 
       - name: Log in to Docker Hub
